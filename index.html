@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<div id='saves'>
+    <button id="export_save">Export save</button>
+    <button id="download_save">Download save</button>
+    <button id="import_save">Import save</button>
+</div>
+
+<dialog id="Import_Export_dialog">
+	<div>
+		<form method="dialog">
+			<menu>
+				<button id="Import_Export_close_button" type="reset">Cancel</button>
+				<button id="import_button" type="submit">Import</button>
+			</menu>
+			<section>
+				<textarea id="txtImportExport" rows="10" cols="75"></textarea>
+			</section>
+		</form>
+	</div>
+</dialog>
+
+
+<div id="STgroup">
+    <div id="STnav">
+        <div><p>Setup</p></div>
+        <div><p>Teardown</p></div>
+    </div>
+    <div id="ST"></div>
+</div>
+
+<div id='nav'>
+    <button id='add_test'>Add</button>
+    <button id='run_tests'>Run</button>
+</div>
+
+<div id="tests"></div>
+
+<link rel="stylesheet" href="./css/main.css">
+
+<script src="./lib/ace/ace.js"></script>
+
+<script src="./lib/lodash/lodash.js"></script>
+<script src="./lib/platform/platform.js"></script>
+<script src="./lib/benchmark/benchmark.js"></script>
+
+<script src="./lib/import_export/import_export.js"></script>
+
+<script src="./js/main.js"></script>
+
+</body>
+</html>

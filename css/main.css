@@ -1,0 +1,51 @@
+#nav, #saves {
+    display: flex;
+}
+
+#nav > button, #saves > button {
+    margin: 1em;
+    flex-grow: 1;
+}
+
+#tests {
+    margin: 0 1em 1em 1em;;
+}
+
+#tests > div {
+    display: flex;
+    margin-bottom: 1em;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+#ST, #STnav {
+    display: flex;
+}
+
+#STnav {
+    text-align: center;
+}
+
+#STgroup {
+    border: 2px solid gray;
+}
+
+#STnav > div:not(:last-child){
+    border-right: 2px solid gray;
+}
+
+#STgroup > div:not(:last-child){
+    border-bottom: 2px solid gray;
+}
+
+#STgroup > div > div {
+    width: 50%;
+}
+
+#tests .editor {
+    width: 80%;
+    border-right: 2px solid gray;
+}
+
+.result {
+}
