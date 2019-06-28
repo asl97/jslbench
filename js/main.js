@@ -143,7 +143,28 @@ import_export.loads = loads;
 import_export.save_file = 'jsLbench.base64';
 
 function run_tests(){
-    var suite = new Benchmark.Suite;
+    let resultElements = {};
+    var suite = new Benchmark.Suite('foo', {
+        onComplete: function(event){
+            targets = event.currentTarget;
+            let results = [];
+            for (let i=0; i<targets.length; i++){
+                result = targets[i];
+                if (!result.error)
+                    results.push(result)
+            }
+            results.sort((a,b)=>b.hz-a.hz)
+
+            let fastest = results[0];
+            for (result of results){
+                if (result === fastest){
+                    resultElements[result.name].innerHTML += '<br/>Fastest';
+                } else {
+                    resultElements[result.name].innerHTML += '<br/>'+(result.hz/fastest.hz).toFixed(2)+'% Speed';
+                }
+            }
+        }
+    });
 
     for (let [editor, result] of testcases){
         result.innerHTML = ""
@@ -152,6 +173,7 @@ function run_tests(){
     var i = 0;
     for (let [editor, result] of testcases){
         i += 1;
+        resultElements[i] = result;
         let code = editor.getValue().trim();
         if (code){
             suite.add(i, {
