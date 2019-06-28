@@ -118,6 +118,7 @@ function loads(data){
         save = JSON.parse(window.atob(data || window.localStorage.getItem('jsLbench')));
     } catch {
         new_test();
+        loading = false;
         return;
     }
 
