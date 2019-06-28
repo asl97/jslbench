@@ -48,8 +48,8 @@
 
 #tests .editor {
     width: 80%;
-    border-right: 2px solid gray;
 }
 
 .result {
+    border-left: 2px solid gray;
 }
