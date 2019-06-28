@@ -135,6 +135,7 @@ function loads(data){
     }
 
     loading = false;
+    saves()
 }
 
 import_export.saves = saves;
