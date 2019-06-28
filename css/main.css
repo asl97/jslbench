@@ -2,6 +2,10 @@
     display: flex;
 }
 
+#Import_Export_dialog {
+    z-index: 999;
+}
+
 #nav > button, #saves > button {
     margin: 1em;
     flex-grow: 1;
