@@ -110,6 +110,8 @@ function loads(data){
         node.parentNode.removeChild(node);
     }
 
+    setup.setValue('', 1);
+    teardown.setValue('', 1);
     testcases.clear();
 
     let save;
