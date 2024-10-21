@@ -117,7 +117,7 @@ function loads(data){
     let save;
 
     try {
-        save = JSON.parse(window.atob(data || window.localStorage.getItem('jsLbench')));
+        save = JSON.parse(window.atob(data));
     } catch {
         new_test();
         loading = false;
@@ -198,4 +198,4 @@ function run_tests(){
 document.getElementById('add_test').onclick = ()=>new_test();
 document.getElementById('run_tests').onclick = ()=>run_tests();
 
-loads()
+loads(window.localStorage.getItem('jsLbench'))
