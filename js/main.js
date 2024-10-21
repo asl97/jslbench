@@ -198,4 +198,4 @@ function run_tests(){
 document.getElementById('add_test').onclick = ()=>new_test();
 document.getElementById('run_tests').onclick = ()=>run_tests();
 
-loads(window.localStorage.getItem('jsLbench'))
+loads(location.hash.slice(1) || window.localStorage.getItem('jsLbench'))
