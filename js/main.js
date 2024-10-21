@@ -98,6 +98,7 @@ function saves(){
     )
 
     window.localStorage.setItem('jsLbench', data);
+    history.replaceState(null, null, document.location.pathname + '#' + data);
 
     return data;
 }
